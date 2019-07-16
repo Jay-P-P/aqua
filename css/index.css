@@ -173,16 +173,20 @@ footer {
     font-size: 15px;
   }
 
-  .hero {
-    background: url("../images/hero-bg.jpg") center no-repeat;
-    background-size: cover;
-  }
-  .hero video {
-    display: none;
-  }
-
   .aquarium {
     width: 100%;
+  }
+
+  main {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  main section {
+    margin: 0.5rem;
+  }
+  main .definition {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .cams-container a img {

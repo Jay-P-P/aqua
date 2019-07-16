@@ -158,6 +158,20 @@ footer {
     width: 100%;
   }
 
+  main {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    section {
+      margin: 0.5rem;
+    }
+
+    .definition {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
   .cams-container {
     a {
       img {
@@ -174,7 +188,6 @@ footer {
   }
 
   .main {
-
     padding-left: 0;
     padding-right: 0;
 
