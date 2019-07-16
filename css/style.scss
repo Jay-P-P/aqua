@@ -154,13 +154,6 @@ footer {
     font-size: 15px;
   }
 
-  .hero {
-    @include background('../images/hero-bg.jpg');
-    video {
-      display: none;
-    }
-  }
-
   .aquarium {
     width: 100%;
   }
