@@ -1,0 +1,35 @@
+@mixin background($url) {
+  background: url($url) center no-repeat;
+  background-size: cover;
+}
+
+@mixin flex($direction, $wrap, $justifyContent, $alignContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justifyContent;
+  align-content: $alignContent;
+  align-items: $alignItems;
+  -ms-flex-direction: $direction;
+}
+
+@mixin box-sizing($value) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+}
+
+@mixin sameWH($value) {
+  width: $value;
+  height: $value;
+}
+
+@mixin pseudo-after($top, $right, $bottom, $left) {
+  content: "";
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

@@ -1,0 +1,199 @@
+@import 'variables';
+@import 'mixins';
+
+:root, * {
+  font-size: $font-size;
+  font-family: $font-stack;
+  @include box-sizing(border-box);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+body {
+  position: relative;
+  background-color: $primary-color;
+}
+
+.hero {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+  @include flex(column, wrap, center, center, center);
+  @include background("../images/hero-bg.mp4");
+  text-align: center;
+
+  &::after {
+    @include pseudo-after(0, 0, 0, 0);
+    @include sameWH(100%);
+    background: #000000;
+    z-index: 2;
+    opacity: 0.65;
+  }
+
+  video {
+    @include pseudo-after(0, 0, 0, 0);
+    @include sameWH(100%);
+    background-color: #000;
+  }
+  
+  h1, p {
+    z-index: 3;
+    color: #eee;
+  }
+  
+  h1 {
+    font-family: $heading-font;
+    font-size: 10rem;
+    position: relative;
+  }
+
+  p {
+    font-size: $paragraph-font-size;
+  }
+}
+
+.main {
+  padding: 5rem 2rem;
+  @include sameWH(100%);
+
+  section {
+    margin: 2rem;
+  }
+}
+
+.definition {
+  color: #fff;
+  padding: 5rem;
+  text-align: justify;
+  line-height: 1.5;
+
+  h2 {
+    opacity: 0;
+    transition: all 500ms linear;
+    transform: translateY(200px);
+  }
+
+  p {
+    transform: scale(1, 0);
+    transition: all 500ms linear;
+  }
+}
+
+.aquarium-container {
+  @include flex(row, wrap, center, space-between, stretch);
+}
+
+.aquarium {
+  padding: 2rem;
+  background-color: $aquarium-bg-color;
+  border-radius: 20px;
+  margin: 0.5rem;
+  opacity: 0;
+  width: 420px;
+  transition: background-image 500ms ease, transform 800ms ease-in, opacity 1000ms ease-in;
+  transform: translateY(200px);
+  box-shadow: 0px 4px 4px -2px #000;
+  position: relative;
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+.location {
+  color: $location-color;
+  text-decoration: none;
+  display: block;
+  margin: 1rem 0;
+  font-size: 1rem;
+ 
+  &:hover {
+    transform: scale(1);
+    color: $primary-color;
+  }
+}
+
+.cams-container {
+  @include flex(row, wrap, flex-start, center, stretch);
+  margin-top: 0.5rem;
+
+  a {
+    opacity: 0;
+    transition: all 500ms linear;
+    margin: 0 0.2rem;
+
+    img {
+      @include sameWH(75px);
+      border-radius: 50%;
+      transition: transform 200ms ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+footer {
+  margin: 0 auto;
+  padding: 5rem;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    font-size: 15px;
+  }
+
+  .hero {
+    @include background('../images/hero-bg.jpg');
+    video {
+      display: none;
+    }
+  }
+
+  .aquarium {
+    width: 100%;
+  }
+
+  .cams-container {
+    a {
+      img {
+        @include sameWH(50px);
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .main {
+
+    padding-left: 0;
+    padding-right: 0;
+
+    section {
+      margin: 0.5rem;
+    }
+
+    .definition {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+@import 'animations';
